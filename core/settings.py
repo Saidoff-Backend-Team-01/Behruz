@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
+from django.utils.translation import gettext_lazy as _
 import os
+
 
 
 
@@ -55,6 +57,7 @@ LOCAL_APPS = [
 
 LIBS = [
     'rest_framework',
+    'modeltranslation',
 ]
 
 
@@ -64,12 +67,27 @@ INSTALLED_APPS = DJANGO_APPS + LOCAL_APPS + LIBS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+LANGUAGES = (
+    ('en', _('English')),
+    ('ru', _('Russion')),
+    ('uz', _('Uzbek')),
+
+)
+
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale/',
+]
+
 
 ROOT_URLCONF = 'core.urls'
 
@@ -147,3 +165,11 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+MODELTRANSLATION_LANGUAGES = ('en', 'uz', 'ru')
+
+MODELTRANSLATION_TRANSLATION_FILES = (
+    'news.translation',
+)
