@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-12 18:04+0500\n"
+"POT-Creation-Date: 2024-07-12 19:21+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,15 +44,15 @@ msgstr "Типы"
 msgid "Media"
 msgstr "Медиа"
 
-#: core/settings.py:79
+#: core/settings.py:80
 msgid "English"
 msgstr "Английский"
 
-#: core/settings.py:80
+#: core/settings.py:81
 msgid "Russion"
 msgstr "Русский"
 
-#: core/settings.py:81
+#: core/settings.py:82
 msgid "Uzbek"
 msgstr "Узбекский"
 

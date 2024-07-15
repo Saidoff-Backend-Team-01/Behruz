@@ -42,3 +42,33 @@ class Media(models.Model):
     class Meta:
         verbose_name = _('Media')
         verbose_name_plural = _('Media')    
+
+
+class FAQ(models.Model):
+    question = models.TextField(verbose_name=_('Question'))
+    answer = models.TextField(verbose_name=_('Answer'))
+
+
+    def __str__(self) -> str:
+        return self.question
+    
+
+    class Meta:
+        verbose_name = _('FAQ')
+        verbose_name_plural = _('FAQ')
+
+
+class Advertising(models.Model):
+    image = models.OneToOneField(to=Media, on_delete=models.CASCADE, verbose_name=_('Image'))
+    url = models.URLField(verbose_name=_('URL'))
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Created at'))
+
+
+    def __str__(self) -> str:
+        return self.url
+    
+
+    class Meta:
+        verbose_name = _('Advertising')
+        verbose_name_plural = _('Advertising')
+
