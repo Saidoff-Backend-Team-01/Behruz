@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-12 19:21+0500\n"
+"POT-Creation-Date: 2024-07-17 14:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,7 +32,7 @@ msgstr "Видео"
 msgid "audio"
 msgstr "Аудио"
 
-#: common/models.py:11 common/models.py:16
+#: common/models.py:11 common/models.py:16 news/models.py:29
 msgid "file"
 msgstr "Файлы"
 
@@ -44,38 +44,172 @@ msgstr "Типы"
 msgid "Media"
 msgstr "Медиа"
 
-#: core/settings.py:80
+#: common/models.py:48
+#, fuzzy
+#| msgid "description"
+msgid "Question"
+msgstr "Обисание"
+
+#: common/models.py:49
+msgid "Answer"
+msgstr "Ответ"
+
+#: common/models.py:57 common/models.py:58
+msgid "FAQ"
+msgstr "Часто задаваетмы вопрося"
+
+#: common/models.py:62 company/models.py:98
+#, fuzzy
+#| msgid "image"
+msgid "Image"
+msgstr "Изображении"
+
+#: common/models.py:63 company/models.py:99
+msgid "URL"
+msgstr "Ссылка"
+
+#: common/models.py:64
+#, fuzzy
+#| msgid "created at"
+msgid "Created at"
+msgstr "Создан в"
+
+#: common/models.py:72 common/models.py:73
+msgid "Advertising"
+msgstr "Реклама"
+
+#: company/models.py:13
+msgid "Adress"
+msgstr "Адрес"
+
+#: company/models.py:15
+msgid "Email"
+msgstr "Электронная почта"
+
+#: company/models.py:16
+msgid "Latitude"
+msgstr "Широта"
+
+#: company/models.py:17
+msgid "Longitude"
+msgstr "Долгата"
+
+#: company/models.py:18
+msgid "Location"
+msgstr "Локация"
+
+#: company/models.py:28 company/models.py:29
+msgid "Contacts"
+msgstr "Контакты"
+
+#: company/models.py:38 company/models.py:112
+msgid "Name"
+msgstr "Имя"
+
+#: company/models.py:40
+msgid "Message"
+msgstr "Сообщение"
+
+#: company/models.py:44 company/models.py:45
+msgid "Contact US"
+msgstr "Контакты с нами"
+
+#: company/models.py:54
+msgid "Text"
+msgstr "Текст"
+
+#: company/models.py:58 company/models.py:59
+msgid "Privacy Policy"
+msgstr "Секретная политика"
+
+#: company/models.py:68
+#, fuzzy
+#| msgid "title"
+msgid "Title"
+msgstr "Заголовок"
+
+#: company/models.py:69 company/models.py:113
+#, fuzzy
+#| msgid "description"
+msgid "Description"
+msgstr "Обисание"
+
+#: company/models.py:73 company/models.py:74
+msgid "App Info"
+msgstr "Инфорация о приложении"
+
+#: company/models.py:82
+msgid "Telegram URL"
+msgstr "Ссылка на Telegram"
+
+#: company/models.py:83
+msgid "LinkedIN URL"
+msgstr "Ссылка на LinkedIN"
+
+#: company/models.py:84
+msgid "Facebook URL"
+msgstr "Ссылка на Facebook"
+
+#: company/models.py:85
+msgid "Instagram URL"
+msgstr "Ссылка на Instagram"
+
+#: company/models.py:89 company/models.py:90
+msgid "Social Media"
+msgstr "Социальные сети"
+
+#: company/models.py:103 company/models.py:104
+msgid "Sponsor"
+msgstr "Спонсоры"
+
+#: company/models.py:119 company/models.py:120
+msgid "About Mistake"
+msgstr "Сообщите об ошибке"
+
+#: core/settings.py:87
 msgid "English"
 msgstr "Английский"
 
-#: core/settings.py:81
+#: core/settings.py:88
 msgid "Russion"
 msgstr "Русский"
 
-#: core/settings.py:82
+#: core/settings.py:89
 msgid "Uzbek"
 msgstr "Узбекский"
 
-#: news/models.py:9
+#: news/models.py:10
 msgid "title"
 msgstr "Заголовок"
 
-#: news/models.py:10
+#: news/models.py:11
 msgid "description"
 msgstr "Обисание"
 
-#: news/models.py:11
+#: news/models.py:12
 msgid "created at"
 msgstr "Создан в"
 
-#: news/models.py:12
+#: news/models.py:13
 msgid "is published"
 msgstr "Публикован"
 
-#: news/models.py:13
+#: news/models.py:14
 msgid "media"
 msgstr "Медиа"
 
-#: news/models.py:18 news/models.py:19
+#: news/models.py:19 news/models.py:20
 msgid "News"
 msgstr "Новости"
+
+#: news/models.py:30
+msgid "news"
+msgstr "новости"
+
+#: news/models.py:38
+msgid "News Image"
+msgstr "Изображение"
+
+#: news/models.py:39
+msgid "News Images"
+msgstr "Изображение"

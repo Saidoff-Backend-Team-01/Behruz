@@ -15,7 +15,7 @@ class Contacts(models.Model):
     email = models.EmailField(verbose_name=_('Email'))
     latitude = gis_models.FloatField(verbose_name=_('Latitude'))
     longitude = gis_models.FloatField(verbose_name=_('Longitude'))
-    location = gis_models.PointField(verbose_name=_('Location'))
+    location = gis_models.PointField(verbose_name=_('Location'), blank=True, null=True)
 
 
     def save(self, *args, **kwargs):

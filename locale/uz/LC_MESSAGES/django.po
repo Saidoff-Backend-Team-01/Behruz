@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-12 19:21+0500\n"
+"POT-Creation-Date: 2024-07-17 14:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr "Video"
 msgid "audio"
 msgstr "Audio"
 
-#: common/models.py:11 common/models.py:16
+#: common/models.py:11 common/models.py:16 news/models.py:29
 msgid "file"
 msgstr "Fayl"
 
@@ -42,38 +42,172 @@ msgstr "Tayplar"
 msgid "Media"
 msgstr "Media"
 
-#: core/settings.py:80
+#: common/models.py:48
+#, fuzzy
+#| msgid "description"
+msgid "Question"
+msgstr "Testi"
+
+#: common/models.py:49
+msgid "Answer"
+msgstr "Javob"
+
+#: common/models.py:57 common/models.py:58
+msgid "FAQ"
+msgstr "Savollarga Javoblar"
+
+#: common/models.py:62 company/models.py:98
+#, fuzzy
+#| msgid "image"
+msgid "Image"
+msgstr "Rasm"
+
+#: common/models.py:63 company/models.py:99
+msgid "URL"
+msgstr "URL"
+
+#: common/models.py:64
+#, fuzzy
+#| msgid "created at"
+msgid "Created at"
+msgstr "yaratilgan"
+
+#: common/models.py:72 common/models.py:73
+msgid "Advertising"
+msgstr "Reklama"
+
+#: company/models.py:13
+msgid "Adress"
+msgstr "Adres"
+
+#: company/models.py:15
+msgid "Email"
+msgstr "Elektron po'chta"
+
+#: company/models.py:16
+msgid "Latitude"
+msgstr "Latitude"
+
+#: company/models.py:17
+msgid "Longitude"
+msgstr "Longitude"
+
+#: company/models.py:18
+msgid "Location"
+msgstr "Lokatsiya"
+
+#: company/models.py:28 company/models.py:29
+msgid "Contacts"
+msgstr "Kontakt"
+
+#: company/models.py:38 company/models.py:112
+msgid "Name"
+msgstr "Ism"
+
+#: company/models.py:40
+msgid "Message"
+msgstr "Habar"
+
+#: company/models.py:44 company/models.py:45
+msgid "Contact US"
+msgstr "Bizga yozing"
+
+#: company/models.py:54
+msgid "Text"
+msgstr "Tekst"
+
+#: company/models.py:58 company/models.py:59
+msgid "Privacy Policy"
+msgstr "Maxfiylik siyosati"
+
+#: company/models.py:68
+#, fuzzy
+#| msgid "title"
+msgid "Title"
+msgstr "Nomi"
+
+#: company/models.py:69 company/models.py:113
+#, fuzzy
+#| msgid "description"
+msgid "Description"
+msgstr "Testi"
+
+#: company/models.py:73 company/models.py:74
+msgid "App Info"
+msgstr "Programma tog`risida malumot"
+
+#: company/models.py:82
+msgid "Telegram URL"
+msgstr "Telegram URL"
+
+#: company/models.py:83
+msgid "LinkedIN URL"
+msgstr "LinkedIN URL"
+
+#: company/models.py:84
+msgid "Facebook URL"
+msgstr "Facebook URL"
+
+#: company/models.py:85
+msgid "Instagram URL"
+msgstr "Instagram URL"
+
+#: company/models.py:89 company/models.py:90
+msgid "Social Media"
+msgstr "Social Media"
+
+#: company/models.py:103 company/models.py:104
+msgid "Sponsor"
+msgstr "Sponsor"
+
+#: company/models.py:119 company/models.py:120
+msgid "About Mistake"
+msgstr "About Mistake"
+
+#: core/settings.py:87
 msgid "English"
 msgstr "Ingilis"
 
-#: core/settings.py:81
+#: core/settings.py:88
 msgid "Russion"
 msgstr "Rus"
 
-#: core/settings.py:82
+#: core/settings.py:89
 msgid "Uzbek"
 msgstr "O'zbek"
 
-#: news/models.py:9
+#: news/models.py:10
 msgid "title"
 msgstr "Nomi"
 
-#: news/models.py:10
-msgid "description"
-msgstr "Testi"
-
 #: news/models.py:11
+msgid "description"
+msgstr "Tesksti"
+
+#: news/models.py:12
 msgid "created at"
 msgstr "yaratilgan"
 
-#: news/models.py:12
+#: news/models.py:13
 msgid "is published"
 msgstr "Obuna qilingan"
 
-#: news/models.py:13
+#: news/models.py:14
 msgid "media"
 msgstr "Media"
 
-#: news/models.py:18 news/models.py:19
+#: news/models.py:19 news/models.py:20
 msgid "News"
 msgstr "Yangiliklar"
+
+#: news/models.py:30
+msgid "news"
+msgstr "yangilik"
+
+#: news/models.py:38
+msgid "News Image"
+msgstr "Rasim"
+
+#: news/models.py:39
+msgid "News Images"
+msgstr "Rasim"
