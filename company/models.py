@@ -1,18 +1,29 @@
+from typing import Iterable
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.gis.db import models as gis_models
 from ckeditor.fields import RichTextField
 from django.utils.translation import gettext_lazy as _
 from common.models import Media
+from django.contrib.gis.geos import Point
+
 
 # Create your models here.
 class Contacts(models.Model):
     adress = models.CharField(verbose_name=_('Adress'),max_length=200)
     phone = PhoneNumberField()
     email = models.EmailField(verbose_name=_('Email'))
+    latitude = gis_models.FloatField(verbose_name=_('Latitude'))
+    longitude = gis_models.FloatField(verbose_name=_('Longitude'))
     location = gis_models.PointField(verbose_name=_('Location'))
 
 
+    def save(self, *args, **kwargs):
+        if self.latitude and self.longitude:
+            self.location = Point(self.longitude, self.latitude)
+        return super().save(*args, **kwargs)
+
+    
     class Meta:
         verbose_name = _('Contacts')
         verbose_name_plural = _('Contacts')

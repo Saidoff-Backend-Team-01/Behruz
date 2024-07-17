@@ -33,6 +33,17 @@ class PrivacyPolicyAdmin(admin.ModelAdmin):
     search_fields = ['id']
 
 
+    def has_add_permission(self, request: HttpRequest) -> bool:
+        if PrivacyPolicy.objects.exists():
+            return False
+        return super().has_add_permission(request)
+    
+
+    def has_delete_permission(self, request: HttpRequest, obj=None) -> bool:
+        return False
+
+
+
 @admin.register(AppInfo)
 class AppInfoAdmin(admin.ModelAdmin):
     list_display = ['id', 'title']
