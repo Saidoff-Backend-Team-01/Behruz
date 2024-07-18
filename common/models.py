@@ -47,7 +47,7 @@ class Media(models.Model):
 class FAQ(models.Model):
     question = models.TextField(verbose_name=_('Question'))
     answer = models.TextField(verbose_name=_('Answer'))
-
+#TODO: add order field
 
     def __str__(self) -> str:
         return self.question
