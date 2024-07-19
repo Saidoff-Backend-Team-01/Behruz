@@ -3,7 +3,7 @@ name: Django CI/CD
 on:
   push:
     branches:
-      - main  # указать вашу основную ветку
+      - cicd  # указать вашу основную ветку
 
 jobs:
   deploy:
