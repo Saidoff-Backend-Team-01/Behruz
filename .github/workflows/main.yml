@@ -1,4 +1,4 @@
-name: Django CI/CD
+name: Django CI/CD to VPS
 
 on:
   push:
