@@ -52,4 +52,4 @@ jobs:
 
       - name: Деплой на сервер
         run: |
-          ssh root@45.138.158.251 "cd /var/www/ci-cd && git pull origin main && systemctl restart gunicorn"
+          ssh root@45.138.158.251 "cd /var/www/ci-cd/ && git pull origin main && systemctl restart gunicorn"
