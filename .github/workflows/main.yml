@@ -39,14 +39,14 @@ jobs:
 
       - name: Выполнение миграций и сбор статики
         env:
-          GDAL_LIBRARY_PATH: /usr/lib/libgdal.so  # Укажите правильный путь к GDAL
+          GDAL_LIBRARY_PATH: /env/lib/libgdal.so  # Укажите правильный путь к GDAL
         run: |
           python manage.py makemigrations
           python manage.py migrate
 
       - name: Запуск тестов
         env:
-          GDAL_LIBRARY_PATH: /usr/lib/libgdal.so  # Укажите правильный путь к GDAL
+          GDAL_LIBRARY_PATH: /env/lib/libgdal.so  # Укажите правильный путь к GDAL
         run: |
           python manage.py test
 
