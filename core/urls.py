@@ -25,6 +25,7 @@ urlpatterns = i18n_patterns(
     path('api/common/', include('common.urls')),
     path('api/news/', include('news.urls')),
     path('api/company/', include('company.urls')),
+    
 
 )
 
