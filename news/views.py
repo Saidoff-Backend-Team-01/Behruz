@@ -11,4 +11,8 @@ class NewsList(ListAPIView):
 class NewsDetail(RetrieveAPIView):
     queryset = News.published.all()
     serializer_class = NewsSerializer
+<<<<<<< HEAD
     
+=======
+    
+>>>>>>> 7b78ea46c6826b03d74b3213f6acec593e8d8843
