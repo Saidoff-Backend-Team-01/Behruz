@@ -30,4 +30,4 @@ jobs:
         env:
           SSH_PASSWORD: bex2009ake
         run: |
-          sshpass -p "bex2009ake" ssh -o StrictHostKeyChecking=no root@45.138.158.251 "cd /var/www/Bumen_Behruz && git pull origin main && systemctl restart men"
+          sshpass -p "bex2009ake" ssh -o StrictHostKeyChecking=no root@45.138.158.251 "cd /var/www/Bumen_Behruz && git pull origin lesson_4 && systemctl restart men"
