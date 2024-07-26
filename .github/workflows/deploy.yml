@@ -28,6 +28,6 @@ jobs:
 
       - name: Деплой на сервер
         env:
-          SSH_PASSWORD: bex2009ake
+          SSH_PASSWORD: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
-          sshpass -p "bex2009ake" ssh -o StrictHostKeyChecking=no root@45.138.158.251 "cd /var/www/Bumen_Behruz && git pull origin lesson_4 && systemctl restart men"
+          sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no root@45.138.158.251 "cd /var/www/Bumen_Behruz && git pull origin lesson_4 && systemctl restart men"
