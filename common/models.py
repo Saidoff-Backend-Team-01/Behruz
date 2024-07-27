@@ -71,5 +71,5 @@ class Advertising(models.Model):
 
     class Meta:
         verbose_name = _('Advertising')
-        verbose_name_plural = _('Advertising')
+        verbose_name_plural = _('Advertisings')
 

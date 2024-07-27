@@ -15,7 +15,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name = _('Category')
-        verbose_name_plural = _('Category')
+        verbose_name_plural = _('Categorys')
     
 
 class SubjectTitle(models.Model):
@@ -29,7 +29,7 @@ class SubjectTitle(models.Model):
 
     class Meta:
         verbose_name = _('Subject title')
-        verbose_name_plural = _('Subject title')
+        verbose_name_plural = _('Subject titles')
     
 
 class Subject(models.Model):
@@ -48,13 +48,13 @@ class Subject(models.Model):
 
     class Meta:
         verbose_name = _('Subject')
-        verbose_name_plural = _('Subject')
+        verbose_name_plural = _('Subjects')
     
 
 class UserSubject(models.Model):
     subject = models.ForeignKey(verbose_name=_('Subject'), to=Subject, on_delete=models.CASCADE)
     user = models.ForeignKey(verbose_name=_('User'), to=User, on_delete=models.CASCADE)
-    total_test_ball = models.PositiveIntegerField(verbose_name=_('Total test ball'))
+    total_test_ball = models.PositiveIntegerField(verbose_name=_('Total test bal'))
 
 
     def __str__(self) -> str:
@@ -63,7 +63,7 @@ class UserSubject(models.Model):
 
     class Meta:
         verbose_name = _('User\'s subject')
-        verbose_name_plural = _('User\'s subject')
+        verbose_name_plural = _('User\'s subjects')
     
 
 class Vacancy(models.Model):
@@ -78,7 +78,7 @@ class Vacancy(models.Model):
 
     class Meta:
         verbose_name = _('Vacancy')
-        verbose_name_plural = _('Vacancy')
+        verbose_name_plural = _('Vacancies')
     
 
 class Club(models.Model):
@@ -95,7 +95,7 @@ class Club(models.Model):
 
     class Meta:
         verbose_name = _('Club')
-        verbose_name_plural = _('Club')
+        verbose_name_plural = _('Clubs')
     
 
 class ClubMeeting(models.Model):
@@ -111,7 +111,7 @@ class ClubMeeting(models.Model):
 
     class Meta:
         verbose_name = _('Club Meeting')
-        verbose_name_plural = _('Club Meeting')
+        verbose_name_plural = _('Club Meetings')
     
 
 class Step(models.Model):
@@ -127,7 +127,7 @@ class Step(models.Model):
 
     class Meta:
         verbose_name = _('Step')
-        verbose_name_plural = _('Step')
+        verbose_name_plural = _('Steps')
     
 
 class StepLesson(models.Model):
@@ -142,7 +142,7 @@ class StepLesson(models.Model):
 
     class Meta:
         verbose_name = _('Step\'s lesson')
-        verbose_name_plural = _('Step\'s lesson')
+        verbose_name_plural = _('Step\'s lessons')
 
 
 class StepTest(models.Model):
@@ -152,7 +152,7 @@ class StepTest(models.Model):
     )
 
     step = models.ForeignKey(verbose_name=_('Step'), to=Step, on_delete=models.CASCADE)
-    ball_for_each_test = models.FloatField(verbose_name=_('Ball for each question'))
+    ball_for_each_test = models.FloatField(verbose_name=_('Bal for each question'))
     question_count = models.PositiveIntegerField(verbose_name=_('Question Count'))
     test_type = models.CharField(verbose_name=_('Test type'), max_length=30)
     time_for_test = models.DurationField(verbose_name=_('Test time limit'))
@@ -164,7 +164,7 @@ class StepTest(models.Model):
 
     class Meta:
         verbose_name = _('Step\'s test')
-        verbose_name_plural = _('Step\'s test')
+        verbose_name_plural = _('Step\'s tests')
     
 
 class TestQuestion(models.Model):
@@ -183,7 +183,7 @@ class TestQuestion(models.Model):
 
     class Meta:
         verbose_name = _('Test\'s question')
-        verbose_name_plural = _('Test\'s question')
+        verbose_name_plural = _('Test\'s questions')
     
 
 class TestAnswer(models.Model):
@@ -198,7 +198,7 @@ class TestAnswer(models.Model):
 
     class Meta:
         verbose_name = _('Test\'s answer')
-        verbose_name_plural = _('Test\'s answer')
+        verbose_name_plural = _('Test\'s answers')
 
 
 
@@ -214,13 +214,13 @@ class UserTestResult(models.Model):
 
     class Meta:
         verbose_name = _('Test result')
-        verbose_name_plural = _('Test result')
+        verbose_name_plural = _('Test results')
     
 
 class UserTotelTestResult(models.Model):
     step_test = models.ForeignKey(verbose_name=_('Step test'), to=StepTest, on_delete=models.CASCADE)
     user = models.ForeignKey(verbose_name=_('Users'), to=User, on_delete=models.CASCADE)
-    ball = models.FloatField(verbose_name=_('Ball'))  
+    ball = models.FloatField(verbose_name=_('Bal'))  
     correct_answers = models.PositiveIntegerField(verbose_name=_('Count of correct answers'))
     user_test_results = models.ManyToManyField(verbose_name=_('Test Results'), to=UserTestResult, related_name='testresults') 
 
@@ -231,4 +231,4 @@ class UserTotelTestResult(models.Model):
 
     class Meta:
         verbose_name = _('Total test result')
-        verbose_name_plural = _('Total test result')
+        verbose_name_plural = _('Total test results')

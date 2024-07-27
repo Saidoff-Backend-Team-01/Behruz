@@ -20,7 +20,7 @@ class User(AbstractUser):
 
     class Meta:
         verbose_name = _('User')
-        verbose_name_plural = _('User')
+        verbose_name_plural = _('Users')
     
 
 class Groups(models.Model):
@@ -33,7 +33,7 @@ class Groups(models.Model):
 
     class Meta:
         verbose_name = _('Group')
-        verbose_name_plural = _('Group')
+        verbose_name_plural = _('Groups')
     
 
 class UserMessage(models.Model):
@@ -49,5 +49,5 @@ class UserMessage(models.Model):
 
     class Meta:
         verbose_name = _('User\'s message')
-        verbose_name_plural = _('User\'s message')
+        verbose_name_plural = _('User\'s messages')
     

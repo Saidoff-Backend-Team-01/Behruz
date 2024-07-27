@@ -101,7 +101,7 @@ class Sponsor(models.Model):
 
     class Meta:
         verbose_name = _('Sponsor')
-        verbose_name_plural = _('Sponsor')
+        verbose_name_plural = _('Sponsors')
 
     
     def __str__(self) -> str:
@@ -117,9 +117,25 @@ class AboutMistake(models.Model):
 
     class Meta:
         verbose_name = _('About Mistake')
-        verbose_name_plural = _('About Mistake')
+        verbose_name_plural = _('About Mistakes')
 
     
     def __str__(self) -> str:
         return self.name
+    
+
+class ContactWithUsMobile(models.Model):
+    email = models.EmailField(verbose_name=_('Email'))
+    message = models.TextField(verbose_name=_('Message'))
+    file = models.OneToOneField(verbose_name=_('File'), to=Media, null=True, blank=True, on_delete=models.SET_NULL)
+
+
+
+    class Meta:
+        verbose_name = _('Contact With Us')
+        verbose_name_plural = _('Contact With Us')
+
+
+    def __str__(self) -> str:
+        return self.email
     
