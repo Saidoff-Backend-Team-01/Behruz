@@ -1,6 +1,6 @@
 from django.contrib import admin
 from news.models import News, NewsImage
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import Group
 # Register your models here.
 
 
@@ -18,5 +18,5 @@ class NewsImageAdmin(admin.ModelAdmin):
     search_fields = ['id']
     
 
-admin.site.unregister(User)
+
 admin.site.unregister(Group)
