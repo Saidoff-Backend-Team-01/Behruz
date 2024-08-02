@@ -2,7 +2,7 @@ from typing import Iterable
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.gis.db import models as gis_models
-from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
 from django.utils.translation import gettext_lazy as _
 from common.models import Media
 from django.contrib.gis.geos import Point
@@ -51,7 +51,7 @@ class ContactUS(models.Model):
 
 
 class PrivacyPolicy(models.Model):
-    text = RichTextField(verbose_name=_('Text'))
+    text = CKEditor5Field(verbose_name=_('Text'))
 
 
     class Meta:
@@ -124,18 +124,46 @@ class AboutMistake(models.Model):
         return self.name
     
 
-class ContactWithUsMobile(models.Model):
-    email = models.EmailField(verbose_name=_('Email'))
-    message = models.TextField(verbose_name=_('Message'))
-    file = models.OneToOneField(verbose_name=_('File'), to=Media, null=True, blank=True, on_delete=models.SET_NULL)
 
+class ContactWithUsCategory(models.Model):
+    name = models.CharField(_("Name"), max_length=255)
 
+    def __str__(self):
+        return self.name
 
     class Meta:
-        verbose_name = _('Contact With Us')
-        verbose_name_plural = _('Contact With Us')
+        verbose_name = _("Contact With Us Category")
+        verbose_name_plural = _("Contact With Us Category")
 
 
-    def __str__(self) -> str:
+class ContactWithUsReason(models.Model):
+    name = models.CharField(_("Name"), max_length=255)
+    category = models.ForeignKey(
+        ContactWithUsCategory,
+        verbose_name=_("Category"),
+        on_delete=models.CASCADE,
+        related_name="contact_with_us_reasons",
+    )
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _("Contact With Us Reason")
+        verbose_name_plural = _("Contact With Us Reason")
+
+
+class ContactWithUsMobile(models.Model):
+    email = models.EmailField(_("Email"))
+    message = models.TextField(_("Text"))
+    file = models.ForeignKey(Media, verbose_name=_("File"), on_delete=models.CASCADE)
+    reason = models.ForeignKey(
+        ContactWithUsReason, verbose_name=_("Reason"), on_delete=models.CASCADE
+    )
+
+    def __str__(self):
         return self.email
-    
+
+    class Meta:
+        verbose_name = _("Contact With Us Mobile")
+        verbose_name_plural = _("Contact With Us Mobile")

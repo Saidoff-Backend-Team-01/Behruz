@@ -25,13 +25,16 @@ urlpatterns = i18n_patterns(
     path('api/common/', include('common.urls')),
     path('api/news/', include('news.urls')),
     path('api/company/', include('company.urls')),
+    path('api/subjects/', include('subject.urls'))
     
 )
 
 urlpatterns += [
+   path('i18n/', include('django.conf.urls.i18n')),
    path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+   path('ckeditor5/', include('django_ckeditor_5.urls')),
 ]
 
 

@@ -14,6 +14,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 from django.utils.translation import gettext_lazy as _
 import os
+from .jazzmin_settings import JAZZMIN_SETTINGS
+from .ckeditor_settings import CKEDITOR_5_CONFIGS
 
 
 
@@ -62,11 +64,14 @@ LIBS = [
     'jazzmin',
     'rest_framework',
     'modeltranslation',
-    'ckeditor',
+    'django_ckeditor_5',
     'phonenumber_field',
     'leaflet',
     'geoip2',
     'drf_yasg',
+    'celery',
+    'django_celery_beat',  
+    'django_celery_results',  
 ]
 
 
@@ -193,3 +198,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 AUTH_USER_MODEL = 'account.User'
+
+JAZZMIN_SETTINGS = JAZZMIN_SETTINGS
+
+
+CELERY_BROKER_URL = 'redis://127.0.0.1:6377/0'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6377/0'
+
+
+CKEDITOR_5_CONFIGS =CKEDITOR_5_CONFIGS

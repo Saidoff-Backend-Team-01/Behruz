@@ -3,10 +3,11 @@ from django.utils.translation import gettext_lazy as _
 from account.models import User
 from common.models import Media
 
+
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(verbose_name=_('Name'), max_length=100, unique=True)
-    click_count = models.PositiveIntegerField(verbose_name=_('Click Count'))
+    click_count = models.PositiveIntegerField(verbose_name=_('Click Count'), default=0)
 
 
     def __str__(self) -> str:
@@ -102,7 +103,7 @@ class ClubMeeting(models.Model):
     name = models.CharField(verbose_name=_('Name'), max_length=100)
     location = models.URLField(verbose_name=_('Location link'))
     date = models.DateTimeField(auto_now=True)
-    club = models.ForeignKey(verbose_name=_('Club'), to=Club, on_delete=models.CASCADE)
+    club = models.ForeignKey(verbose_name=_('Club'), to=Club, on_delete=models.CASCADE, related_name='meetings')
 
 
     def __str__(self) -> str:

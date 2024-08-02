@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.http import HttpRequest
 from leaflet.admin import LeafletGeoAdmin
-from company.models import Contacts, ContactUS, PrivacyPolicy, AppInfo, SocialMedia, Sponsor, AboutMistake
+from company.models import Contacts, ContactUS, PrivacyPolicy, AppInfo, SocialMedia, Sponsor, AboutMistake, ContactWithUsMobile
 
 @admin.register(Contacts)
 class ContactsAdmin(LeafletGeoAdmin):
@@ -86,3 +86,10 @@ class MistakeAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'name')
     search_fields = ('id', 'name')
     list_editable = ('done', )
+
+
+@admin.register(ContactWithUsMobile)
+class ContactWithUSModileAdmin(admin.ModelAdmin):
+    list_display = ['id', 'email']
+    list_display_links = ['id', 'email']
+    search_fields  = ['id', 'email']
